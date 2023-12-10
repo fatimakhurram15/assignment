@@ -1,0 +1,22 @@
+8. Given a string s, return a string where all occurences of its first char have been changed to '*', except do not change the first char itself.
+e.g., 'babble' yields 'ba*le' or 'alpha' outputs 'alph' Assume that the string is length 1 or more
+
+DECLARE s, Str1 : STRING
+DECLARE Chr, Char1 : CHARACTER
+DECLARE i : INTEGER
+s ← "" , Chr ← '' , Char1 ← '' i ← 0
+
+INPUT s
+Chr ← MID(s,1,1)
+
+FOR i ← 2 TO LEN(s)
+Char1 ← MID(s,i,1)
+IF Char1 = Chr 
+  THEN 
+   Str1 ← Str1 + '*'
+  ELSE
+   Str1 ← Str1 + Char1
+ ENDIF
+NEXT i
+
+OUTPUT "New string: ", Chr + Str1
