@@ -1,0 +1,23 @@
+1. Find if the input string has all the alphabets (case neutral).
+
+DECLARE Str1, Alpha : STRING
+DECLARE Char1 : CHARACTER
+DECLARE IsPangram : BOOLEAN
+
+Str1 ← “” , Alpha ← “” , Char1 ← ‘’ , IsPangram ← FALSE , i ← 0
+
+INPUT “Enter String: “, Str1
+Alpha ← “ABCDEFGHIJKLMNOPQRSTUVWXYZ”
+Str1 ← UCASE(Str1)
+IsPangram ← TRUE
+
+FOR i ← 1 TO LENGTH(Alpha)
+ Char1 ← MID (Alpha, i, 1)
+ IF LOCATE (Str1, Char1) = 0
+   THEN
+   IsPangram ← FALSE AND EXIT FOR
+ ENDIF
+NEXT i
+
+IF IsPangram = FALSE THEN OUTPUT “Sting does not have all the alphabets.”
+IF IsPangram = TRUE THEN OUTPUT “String does have all the alphabet.”
