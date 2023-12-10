@@ -1,0 +1,23 @@
+2. Replace selected character with another in entered string.
+
+DECLARE Str1, Str2 : STRING
+DECLARE CharReplaced, CharReplacedWith : CHARACTER 
+DECLARE i : INTEGER 
+
+Str1 ← "" , Str2 ← "" , CharReplaced ← '' , CharReplacedWith ← '' , i ← 0
+
+INPUT “Enter String: “, Str1
+INPUT “Enter character that is to replaced: “, CharReplaced
+INPUT “Enter character that has to replace: “, CharReplacedWith
+UCASE(Str1)
+UCASE(CharReplaced)
+UCASE(CharReplacedWith)
+
+FOR i ← 1 TO LENGTH(Str1) 
+ Char1 ← MID (Str1, i, 1)
+ IF Char1 ← MID(Str1, i, 1) = CharReplaced
+  then Str2 = Str2 + CharReplacedWith
+  else Str2 = Str2 + Char1
+NEXT i
+
+OUTPUT "The new string is: ", str2
