@@ -1,0 +1,17 @@
+4. Find the character that appears most number of times in an entered string and output it.
+
+DECLARE Str1 : STRING
+DECLARE Char1, MostRepeated : CHARACTER
+DECLARE Locate1, Biggest : INTEGER
+
+Str1 ← "" , Char1 ← '' , Mostrpeated ← '' , locate1 ← 0 , Biggest ← -1
+
+INPUT "Enter string: ", Str1
+
+FOR i ← 1 to LEN(Str1)
+ Char1 ← MID(Str1,i,1)
+ Locate1 ← LOCATE(Str1, Char1)
+ IF Locate1 > Biggest THEN Biggest ← Locate1 AND MostRepeated ← Char1
+NEXT i
+OUTPUT "The most repeated chahracter: ", MoatRepeated
+OUTPUT "Amount of times the character got repeated: ", Biggest
