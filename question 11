@@ -1,0 +1,23 @@
+11. Given a string, find the first appearance of the substring 'not' and 'bad'. If the 'bad' follows the 'not', replace the whole 'not'...'bad' substring
+with 'good'. Return the resulting string.
+Input: 'This dinner is not that bad!' 
+Outputs: This dinner is good!
+
+DECLARE Str1, Str2 : STRING
+DECLARE X : INTEGER
+
+Str1 ← "" , Str2 ← "" , X ← 0
+
+INPUT "Enter String: ", Str1
+
+X ← LOCATE(Str1,'N')
+WHILE MID(Str1,X,3) = "not" DO
+ Str2 ← MID(Str1,1,X-1) & "good"
+ENDWHILE
+
+IF Str2 = ""
+ THEN 
+ OUTPUT "String is still the same: ", Str1
+  ELSE
+  OUTPUT "New string: ", Str2
+ENDIF
