@@ -1,0 +1,17 @@
+7. Input a string s, output a string made of the first 2 and the last 2 chars of the original string, so 'spring' yields 'spng'. However, if the string length
+is less than 2, return string s instead the empty string.
+
+DECLARE s, Str : STRING
+
+s ← "" , str ← "" 
+
+INPUT "Enter string: ", s
+
+WHILE LEN(s) <> 2 DO
+ Str ← LEFT(s,2)
+ Str ← Str + MID(s,LEN(s) - 1,1)
+ Str ← Str + MID(s,LEN(s),1)
+ENDWHILE
+IF Str ← "" 
+ THEN OUTPUT s
+ ELSE OUTPUT Str
